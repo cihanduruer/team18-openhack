@@ -47,6 +47,9 @@ spec:
       containers:
       - name: minecraft-server
         image: openhack/minecraft-server
+        env:
+        - name: EULA
+          value: 'TRUE'
         ports:
         - containerPort: 25575
           name: default
