@@ -7,3 +7,5 @@ Set the subscription
 ##Verify that you have connection with your cluster
 `kubectl get pods --all-namespaces`
 
+##Print your proxy
+`kubectl proxy`
