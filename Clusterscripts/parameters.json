@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "value": "Team18MCk8s"
+        },
+        "masterDnsNamePrefix": {
+            "value": "team18mck8smgmt"
+        },
+        "agentDnsNamePrefix": {
+            "value": "team18mck8sagents"
+        },
+        "agentCount": {
+            "value": 3
+        },
+        "agentVMSize": {
+            "value": "Standard_DS2"
+        },
+        "linuxAdminUsername": {
+            "value": "team18mck8s"
+        },
+        "windowsAgentAdminUsername": {
+            "value": "azureuser"
+        },
+        "windowsAgentAdminPassword": {
+            "value": null
+        },
+        "orchestratorType": {
+            "value": "Kubernetes"
+        },
+        "masterCount": {
+            "value": 1
+        },
+        "sshRSAPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlIK6nSKZcssdI2F4O6rSqvfPfWpDOVeTKQiLUM4WCc7nIDC5GDzxb62QJp9cXH6YHHmWf8UdG5yj2rmqq24x4WiO0rC6rRE1FMLuX0bH09mn3XyjfJyf2gxhe0+SiOmG6YN2HjBqnNNFVWN67eiHNKd5CQsxyeEt33OufXU2+EQwDE1TeNpvetc01Wurrwi7rWnHfpgX2X2IbhnsL20R1RP4R1KOom1QLq9zzV9jQUAU0ySmEEZiGd+tpXsv+q+jMjJkWVOjBHdfv0DxA0l0gvDlHjywY7//7OvMIDbEjZud6li9aIhGSZFoFq6y8/jHpOzqpB3dz3+/2NP9JfFSzw=="
+        },
+        "enableDiagnostics": {
+            "value": false
+        },
+        "servicePrincipalClientId": {
+            "value": null
+        },
+        "servicePrincipalClientSecret": {
+            "value": null
+        },
+        "osType": {
+            "value": "Linux"
+        },
+        "ukRegion": {
+            "value": false
+        }
+    }
+}

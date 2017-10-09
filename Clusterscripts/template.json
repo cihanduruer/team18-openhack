@@ -1,0 +1,295 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the ACS resource."
+            }
+        },
+        "masterDnsNamePrefix": {
+            "type": "String",
+            "metadata": {
+                "description": "Sets the Domain name prefix for the Master nodes in a cluster.  The concatenation of the domain name and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address."
+            }
+        },
+        "agentDnsNamePrefix": {
+            "type": "String",
+            "metadata": {
+                "description": "Sets the Domain name prefix for the Agent nodes in a cluster.  The concatenation of the domain name and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address."
+            }
+        },
+        "agentCount": {
+            "defaultValue": 1,
+            "minValue": 1,
+            "maxValue": 100,
+            "type": "Int",
+            "metadata": {
+                "description": "The number of agents for the cluster.  This value can be from 1 to 100 (note, for Kubernetes clusters you will also get 1 or 2 public agents in addition to these seleted masters)"
+            }
+        },
+        "agentVMSize": {
+            "defaultValue": "Standard_D2",
+            "allowedValues": [
+                "Standard_A10",
+                "Standard_A11",
+                "Standard_A2",
+                "Standard_A2_v2",
+                "Standard_A2m_v2",
+                "Standard_A3",
+                "Standard_A4",
+                "Standard_A4_v2",
+                "Standard_A4m_v2",
+                "Standard_A5",
+                "Standard_A6",
+                "Standard_A7",
+                "Standard_A8",
+                "Standard_A8_v2",
+                "Standard_A8m_v2",
+                "Standard_A9",
+                "Standard_D11",
+                "Standard_D11_v2",
+                "Standard_D12",
+                "Standard_D12_v2",
+                "Standard_D13",
+                "Standard_D13_v2",
+                "Standard_D14",
+                "Standard_D14_v2",
+                "Standard_D15_v2",
+                "Standard_D2",
+                "Standard_D2_v2",
+                "Standard_D3",
+                "Standard_D3_v2",
+                "Standard_D4",
+                "Standard_D4_v2",
+                "Standard_D5_v2",
+                "Standard_DS11",
+                "Standard_DS11_v2",
+                "Standard_DS12",
+                "Standard_DS12_v2",
+                "Standard_DS13",
+                "Standard_DS13_v2",
+                "Standard_DS14",
+                "Standard_DS14_v2",
+                "Standard_DS15_v2",
+                "Standard_DS2",
+                "Standard_DS2_v2",
+                "Standard_DS3",
+                "Standard_DS3_v2",
+                "Standard_DS4",
+                "Standard_DS4_v2",
+                "Standard_DS5_v2",
+                "Standard_F16",
+                "Standard_F16s",
+                "Standard_F2",
+                "Standard_F2s",
+                "Standard_F4",
+                "Standard_F4s",
+                "Standard_F8",
+                "Standard_F8s",
+                "Standard_G1",
+                "Standard_G2"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "The size of the Virtual Machine."
+            }
+        },
+        "linuxAdminUsername": {
+            "defaultValue": "azureuser",
+            "type": "String",
+            "metadata": {
+                "description": "User name for the Linux Virtual Machines."
+            }
+        },
+        "windowsAgentAdminUsername": {
+            "defaultValue": "azureuser",
+            "type": "String",
+            "metadata": {
+                "description": "User name for the Windows Agent Node Virtual Machines."
+            }
+        },
+        "windowsAgentAdminPassword": {
+            "defaultValue": "n/a",
+            "type": "SecureString",
+            "metadata": {
+                "description": "Password for the Windows Agent Node Virtual Machines"
+            }
+        },
+        "orchestratorType": {
+            "defaultValue": "Kubernetes",
+            "allowedValues": [
+                "Kubernetes",
+                "DCOS",
+                "Swarm",
+                "SwarmMode"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "The type of orchestrator used to manage the applications on the cluster."
+            }
+        },
+        "masterCount": {
+            "defaultValue": 1,
+            "allowedValues": [
+                1,
+                3,
+                5
+            ],
+            "type": "Int",
+            "metadata": {
+                "description": "The number of masters for the cluster."
+            }
+        },
+        "sshRSAPublicKey": {
+            "type": "String",
+            "metadata": {
+                "description": "Configure all linux machines with the SSH RSA public key string.  Your key should include three parts, for example 'ssh-rsa AAAAB...snip...UcyupgH azureuser@linuxvm'"
+            }
+        },
+        "enableDiagnostics": {
+            "defaultValue": false,
+            "type": "Bool",
+            "metadata": {
+                "description": "Enable or disable VM diagnostics."
+            }
+        },
+        "servicePrincipalClientId": {
+            "defaultValue": "n/a",
+            "type": "SecureString",
+            "metadata": {
+                "description": "Client ID (used by cloudprovider)"
+            }
+        },
+        "servicePrincipalClientSecret": {
+            "defaultValue": "n/a",
+            "type": "SecureString",
+            "metadata": {
+                "description": "The Service Principal Client Secret."
+            }
+        },
+        "osType": {
+            "defaultValue": "Linux",
+            "allowedValues": [
+                "Linux",
+                "Windows"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "The type of operating system."
+            }
+        },
+        "ukRegion": {
+            "defaultValue": false,
+            "type": "Bool",
+            "metadata": {
+                "description": "True if the region is uksouth or ukwest."
+            }
+        }
+    },
+    "variables": {
+        "resourceName": "[parameters('resourceName')]",
+        "adminUsername": "[parameters('linuxAdminUsername')]",
+        "agentCount": "[parameters('agentCount')]",
+        "agentsEndpointDNSNamePrefix": "[parameters('agentDnsNamePrefix')]",
+        "agentVMSize": "[parameters('agentVMSize')]",
+        "masterCount": "[parameters('masterCount')]",
+        "mastersEndpointDNSNamePrefix": "[parameters('masterDnsNamePrefix')]",
+        "orchestratorType": "[parameters('orchestratorType')]",
+        "sshRSAPublicKey": "[parameters('sshRSAPublicKey')]",
+        "enableDiagnostics": "[parameters('enableDiagnostics')]",
+        "servicePrincipalClientId": "[parameters('servicePrincipalClientId')]",
+        "servicePrincipalClientSecret": "[parameters('servicePrincipalClientSecret')]",
+        "useServicePrincipalDictionary": {
+            "DCOS": 0,
+            "Swarm": 0,
+            "Kubernetes": 1,
+            "SwarmMode": 0
+        },
+        "useServicePrincipal": "[variables('useServicePrincipalDictionary')[variables('orchestratorType')]]",
+        "servicePrincipalFields": [
+            null,
+            {
+                "ClientId": "[parameters('servicePrincipalClientId')]",
+                "Secret": "[parameters('servicePrincipalClientSecret')]"
+            }
+        ],
+        "osType": "[parameters('osType')]",
+        "osProfileDictionary": {
+            "Linux": 0,
+            "Windows": 1
+        },
+        "isUK": "[string(parameters('ukRegion'))]",
+        "useWindowsOnKubernetes": "[add(variables('useServicePrincipalDictionary')[variables('orchestratorType')], variables('osProfileDictionary')[variables('osType')])]",
+        "windowsProfileFields": [
+            null,
+            null,
+            {
+                "adminUsername": "[parameters('windowsAgentAdminUsername')]",
+                "adminPassword": "[parameters('windowsAgentAdminPassword')]"
+            }
+        ],
+        "diagnosticProfileFields": {
+            "True": null,
+            "False": {
+                "vmDiagnostics": {
+                    "enabled": "[variables('enableDiagnostics')]"
+                }
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.ContainerService/containerServices",
+            "name": "[variables('resourceName')]",
+            "apiVersion": "2017-01-31",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "orchestratorProfile": {
+                    "orchestratorType": "[variables('orchestratorType')]"
+                },
+                "masterProfile": {
+                    "count": "[variables('masterCount')]",
+                    "dnsPrefix": "[variables('mastersEndpointDNSNamePrefix')]"
+                },
+                "agentPoolProfiles": [
+                    {
+                        "name": "agentpool",
+                        "count": "[variables('agentCount')]",
+                        "vmSize": "[variables('agentVMSize')]",
+                        "dnsPrefix": "[variables('agentsEndpointDNSNamePrefix')]",
+                        "osType": "[variables('osType')]"
+                    }
+                ],
+                "diagnosticsProfile": "[variables('diagnosticProfileFields')[variables('isUK')]]",
+                "linuxProfile": {
+                    "adminUsername": "[variables('adminUsername')]",
+                    "ssh": {
+                        "publicKeys": [
+                            {
+                                "keyData": "[variables('sshRSAPublicKey')]"
+                            }
+                        ]
+                    }
+                },
+                "windowsProfile": "[variables('windowsProfileFields')[variables('useWindowsOnKubernetes')]]",
+                "servicePrincipalProfile": "[variables('servicePrincipalFields')[variables('useServicePrincipal')]]"
+            }
+        }
+    ],
+    "outputs": {
+        "masterFQDN": {
+            "type": "String",
+            "value": "[reference(concat('Microsoft.ContainerService/containerServices/', variables('resourceName'))).masterProfile.fqdn]"
+        },
+        "sshMaster0": {
+            "type": "String",
+            "value": "[concat('ssh ', variables('adminUsername'), '@', reference(concat('Microsoft.ContainerService/containerServices/', variables('resourceName'))).masterProfile.fqdn, ' -A -p 2200')]"
+        },
+        "agentFQDN": {
+            "type": "String",
+            "value": "[reference(concat('Microsoft.ContainerService/containerServices/', variables('resourceName'))).agentPoolProfiles[0].fqdn]"
+        }
+    }
+}
