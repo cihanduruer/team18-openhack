@@ -53,10 +53,10 @@ spec:
         - name: MAX_PLAYERS
           value: "100"
         - name: MOTD
-          value: "OpenHack is cool in Amsterdam !"
+          value: "OpenHack is really cool in Amsterdam !"
         - name: ALLOW_FLIGHT
           value: "TRUE"
-        - name: "WORLD"
+        - name: WORLD
           value: "/idealworld"
         ports:
         - containerPort: 25575
@@ -64,16 +64,9 @@ spec:
         - containerPort: 25565
           name: rcon
         volumeMounts:
-        - name: mc-persistent-storage
-          mountPath: /data
         - name: mc-persistent-storage-world
           mountPath: /idealworld
       volumes:
-      - name: mc-persistent-storage
-        azureFile:
-          secretName: azure-fs-secret
-          shareName: team18mc
-          readOnly: false
       - name: mc-persistent-storage-world
         azureFile:
           secretName: azure-fs-secret
