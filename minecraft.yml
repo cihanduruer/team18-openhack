@@ -37,7 +37,7 @@ metadata:
   name: minecraft-server
 spec:
   serviceName: "minecraft-server"
-  replicas: 4
+  replicas: 2
   template:
     metadata:
       labels:
@@ -46,21 +46,29 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: minecraft-server
-        image: openhack/minecraft-server
+        image: openhack/minecraft-server:2.0
         env:
         - name: EULA
-          value: 'TRUE'
+          value: "TRUE"
+        - name: MAX_PLAYERS
+          value: "100"
+        - name: MOTD
+          value: "OpenHack is really cool in Amsterdam !"
+        - name: ALLOW_FLIGHT
+          value: "TRUE"
+        - name: WORLD
+          value: "/idealworld"
         ports:
         - containerPort: 25575
           name: default
         - containerPort: 25565
           name: rcon
         volumeMounts:
-        - name: mc-persistent-storage
-          mountPath: /data
+        - name: mc-persistent-storage-world
+          mountPath: /idealworld
       volumes:
-      - name: mc-persistent-storage
+      - name: mc-persistent-storage-world
         azureFile:
           secretName: azure-fs-secret
-          shareName: team18mc
+          shareName: team18mc-world
           readOnly: false
