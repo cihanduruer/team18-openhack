@@ -37,7 +37,7 @@ metadata:
   name: minecraft-server
 spec:
   serviceName: "minecraft-server"
-  replicas: 4
+  replicas: 1
   template:
     metadata:
       labels:
@@ -46,10 +46,16 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: minecraft-server
-        image: openhack/minecraft-server
+        image: openhack/minecraft-server:2.0
         env:
         - name: EULA
-          value: 'TRUE'
+          value: "TRUE"
+        - name: MAX_PLAYERS
+          value: "100"
+        - name: MOTD
+          value: "OpenHack is cool in Amsterdam !"
+        - name: ALLOW_FLIGHT
+          value: "TRUE"
         ports:
         - containerPort: 25575
           name: default
