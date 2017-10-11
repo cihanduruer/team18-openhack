@@ -1,5 +1,4 @@
-{
-	"tenants": [{
+[{
 			"name": "tenant1",
 			"endpoints": {
 				"minecraft": "10.10.10.10:25565",
@@ -21,4 +20,3 @@
 			}
 		}
 	]
-}
