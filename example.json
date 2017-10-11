@@ -1,0 +1,25 @@
+{
+  [
+    {
+      "name": "tenant1",
+      "endpoints": {
+        "minecraft": "10.10.10.10:25565",
+        "rcon": "10.10.10.10:25575"
+      }
+    },
+    {
+      "name": "tenant2",
+      "endpoints": {
+        "minecraft": "10.10.10.11:25565",
+        "rcon": "10.10.10.11:25575"
+      }
+    },
+    {
+      "name": "tenant3",
+      "endpoints": {
+        "minecraft": "10.10.10.12:25565",
+        "rcon": "10.10.10.12:25575"
+      }
+    }
+  ]
+}
