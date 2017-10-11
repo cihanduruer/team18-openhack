@@ -1,22 +1,142 @@
-[{
-			"name": "tenant1",
-			"endpoints": {
-				"minecraft": "10.10.10.10:25565",
-				"rcon": "10.10.10.10:25575"
-			}
-		},
-		{
-			"name": "tenant2",
-			"endpoints": {
-				"minecraft": "10.10.10.11:25565",
-				"rcon": "10.10.10.11:25575"
-			}
-		},
-		{
-			"name": "tenant3",
-			"endpoints": {
-				"minecraft": "10.10.10.12:25565",
-				"rcon": "10.10.10.12:25575"
-			}
-		}
-	]
+[
+  {
+    "name": "dsui",
+    "endpoints": {
+      "minecraft": "52.232.42.199:25565",
+      "rcon": "52.232.42.199:25575"
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "minecraft-cluster-1",
+    "endpoints": {
+      "minecraft": "13.80.28.101:25565",
+      "rcon": "13.80.28.101:25575"
+    }
+  },
+  {
+    "name": "minecraft-cluster-2",
+    "endpoints": {
+      "minecraft": "13.80.69.141:25565",
+      "rcon": "13.80.69.141:25575"
+    }
+  },
+  {
+    "name": "minecraft-cluster-3",
+    "endpoints": {
+      "minecraft": "13.80.67.247:25565",
+      "rcon": "13.80.67.247:25575"
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "minecraftrconapi",
+    "endpoints": {
+      "minecraft": "13.73.152.98:25565",
+      "rcon": "13.73.152.98:25575"
+    }
+  },
+  {
+    "name": "webapiui1",
+    "endpoints": {
+      "minecraft": "13.81.59.169:25565",
+      "rcon": "13.81.59.169:25575"
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  },
+  {
+    "name": "",
+    "endpoints": {
+      "minecraft": "",
+      "rcon": ""
+    }
+  }
+]
