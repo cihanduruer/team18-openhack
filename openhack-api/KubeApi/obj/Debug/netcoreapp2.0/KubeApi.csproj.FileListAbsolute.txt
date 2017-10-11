@@ -1,0 +1,11 @@
+C:\Projects\team18-openhack\openhack-api\KubeApi\bin\Debug\netcoreapp2.0\KubeApi.deps.json
+C:\Projects\team18-openhack\openhack-api\KubeApi\obj\Debug\netcoreapp2.0\KubeApi.csprojResolveAssemblyReference.cache
+C:\Projects\team18-openhack\openhack-api\KubeApi\obj\Debug\netcoreapp2.0\KubeApi.csproj.CoreCompileInputs.cache
+C:\Projects\team18-openhack\openhack-api\KubeApi\obj\Debug\netcoreapp2.0\KubeApi.AssemblyInfoInputs.cache
+C:\Projects\team18-openhack\openhack-api\KubeApi\obj\Debug\netcoreapp2.0\KubeApi.AssemblyInfo.cs
+C:\Projects\team18-openhack\openhack-api\KubeApi\obj\Debug\netcoreapp2.0\KubeApi.dll
+C:\Projects\team18-openhack\openhack-api\KubeApi\obj\Debug\netcoreapp2.0\KubeApi.pdb
+C:\Projects\team18-openhack\openhack-api\KubeApi\bin\Debug\netcoreapp2.0\KubeApi.runtimeconfig.json
+C:\Projects\team18-openhack\openhack-api\KubeApi\bin\Debug\netcoreapp2.0\KubeApi.runtimeconfig.dev.json
+C:\Projects\team18-openhack\openhack-api\KubeApi\bin\Debug\netcoreapp2.0\KubeApi.dll
+C:\Projects\team18-openhack\openhack-api\KubeApi\bin\Debug\netcoreapp2.0\KubeApi.pdb

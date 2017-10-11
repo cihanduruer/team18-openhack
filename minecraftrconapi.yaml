@@ -4,7 +4,6 @@ metadata:
   name: minecraftrconapi
   labels:
     app: minecraftrconapi
-  namespace: minecraft
 spec:
   type: LoadBalancer
   ports:
@@ -18,7 +17,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: minecraftrconapi
-  namespace: minecraft
+  
 spec:
   replicas: 1
   template:
@@ -26,7 +25,6 @@ spec:
       labels:
         run: minecraftrconapi
         app: minecraftrconapi
-        namespace: minecraft
     spec:
       containers:
         - name: minecraft

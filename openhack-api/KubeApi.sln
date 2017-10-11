@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubeApi", "KubeApi\KubeApi.csproj", "{15CCD594-9093-4149-8F4F-970B21637EFD}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B45C887B-45F4-4B37-9E0B-7D3811FBD548}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15CCD594-9093-4149-8F4F-970B21637EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CCD594-9093-4149-8F4F-970B21637EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CCD594-9093-4149-8F4F-970B21637EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CCD594-9093-4149-8F4F-970B21637EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45C887B-45F4-4B37-9E0B-7D3811FBD548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45C887B-45F4-4B37-9E0B-7D3811FBD548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45C887B-45F4-4B37-9E0B-7D3811FBD548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45C887B-45F4-4B37-9E0B-7D3811FBD548}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EB26E7A-295A-4287-B8A4-062B7BA96D5F}
+	EndGlobalSection
+EndGlobal
