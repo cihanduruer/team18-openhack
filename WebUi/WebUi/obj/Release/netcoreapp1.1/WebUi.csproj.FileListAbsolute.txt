@@ -1,0 +1,9 @@
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\bin\Release\netcoreapp1.1\WebUi.deps.json
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\bin\Release\netcoreapp1.1\WebUi.runtimeconfig.json
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\bin\Release\netcoreapp1.1\WebUi.runtimeconfig.dev.json
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\bin\Release\netcoreapp1.1\WebUi.dll
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\bin\Release\netcoreapp1.1\WebUi.pdb
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\obj\Release\netcoreapp1.1\WebUi.AssemblyInfo.cs
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\obj\Release\netcoreapp1.1\WebUi.dll
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\obj\Release\netcoreapp1.1\WebUi.pdb
+C:\Data\Code\_Spikes\OpenHack\Git\team18-openhack\WebUi\WebUi\obj\Release\netcoreapp1.1\WebUi.csprojResolveAssemblyReference.cache

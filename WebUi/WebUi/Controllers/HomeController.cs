@@ -12,7 +12,7 @@ namespace WebUi.Controllers
 {
     public class HomeController : Controller
     {
-        private static string url = "http://minecraftrconapi/v1/object";
+        private static string url = "http://minecraftrconapi:8080/v1/object";
         //private static string url = "https://raw.githubusercontent.com/cihanduruer/team18-openhack/master/example.json";
 
         public async Task<IActionResult> Index()

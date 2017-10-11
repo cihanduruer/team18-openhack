@@ -9813,10 +9813,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Data\\Code\\_Spikes\\OpenHack\\WebUi\\WebUi\\WebUi.csproj",
+      "projectUniqueName": "C:\\Data\\Code\\_Spikes\\OpenHack\\Git\\team18-openhack\\WebUi\\WebUi\\WebUi.csproj",
       "projectName": "WebUi",
-      "projectPath": "C:\\Data\\Code\\_Spikes\\OpenHack\\WebUi\\WebUi\\WebUi.csproj",
-      "outputPath": "C:\\Data\\Code\\_Spikes\\OpenHack\\WebUi\\WebUi\\obj\\",
+      "projectPath": "C:\\Data\\Code\\_Spikes\\OpenHack\\Git\\team18-openhack\\WebUi\\WebUi\\WebUi.csproj",
+      "outputPath": "C:\\Data\\Code\\_Spikes\\OpenHack\\Git\\team18-openhack\\WebUi\\WebUi\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
