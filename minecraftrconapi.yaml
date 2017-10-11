@@ -4,6 +4,7 @@ metadata:
   name: minecraftrconapi
   labels:
     app: minecraftrconapi
+  namespace: default
 spec:
   type: LoadBalancer
   ports:
@@ -17,7 +18,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: minecraftrconapi
-  
+  namespace: default
 spec:
   replicas: 1
   template:
@@ -25,6 +26,7 @@ spec:
       labels:
         run: minecraftrconapi
         app: minecraftrconapi
+        namespace: default
     spec:
       containers:
         - name: minecraft
@@ -34,6 +36,8 @@ spec:
               value: 'TRUE'
             - name: NAMESPACE
               value: "default"
+            - name: ONOFF
+              value: 'ON'
           ports:
             - containerPort: 8080
 ---
